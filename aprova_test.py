@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 
+#   BIBLIOTÉCAS NECESSÁRIAS
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -14,7 +15,7 @@ url = "https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net/app/login"
 
 option = Options()
 option.headless = True
-driver = webdriver.Firefox(executable_path=r'C:\Gecko\geckodriver.exe')
+driver = webdriver.Firefox(executable_path=r'\gecko\geckodriver.exe')
 
 driver.get(url)
 
@@ -52,5 +53,4 @@ time.sleep(5)
 #select.select_by_visible_text("Inserir respostas").click()
 driver.find_element_by_css_selector("app-simulado-list-item.simulado:nth-child(1) > div:nth-child(1) > div:nth-child(3) > button:nth-child(1) > span:nth-child(1)").click()
 
- 
 
