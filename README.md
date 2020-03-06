@@ -38,7 +38,8 @@ pip install -r "nome_biblioteca_sem_aspas"
 
 ### Geckodriver 
 
-[Você pode encontrar o metodo de instalação no seguinte link.](https://github.com/mozilla/geckodriver/releases)
+[Você pode encontrar o arquivo do driver no seguinte link.](https://github.com/mozilla/geckodriver/releases)
+- Não esqueça de descompactar o arquivo para a pasta \gecko\geckodriver.exe
 
 ### Python
 
