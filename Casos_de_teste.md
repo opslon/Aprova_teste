@@ -3,9 +3,9 @@
 
 * **Caminhos E Perfis**
   * *Caminho*
-    -Login
+    *Login
   * *Perfil*
-    -Perfis: Rede, Regional, Instituição e Professor
+    *Perfis: Rede, Regional, Instituição e Professor
 
 * **Varrer Tela de Login**
   * *Realizar varredura de todos os elementos que possuem interação na aplicação*
