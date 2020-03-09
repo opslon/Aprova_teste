@@ -2,10 +2,13 @@
 ## Login
 
 * **Caminhos E Perfis**
-    1. Caminho: Login
-    2. Perfis: Rede, Regional, Instituição e Professor
+  * *Caminho*
+    -Login
+  * *Perfil*
+    -Perfis: Rede, Regional, Instituição e Professor
 
 * **Varrer Tela de Login**
+  * *Realizar varredura de todos os elementos que possuem interação na aplicação*
 
 * **Casos de Sucesso**
   1. Realizar login na plataforma
