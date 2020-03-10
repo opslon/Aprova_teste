@@ -1,11 +1,10 @@
 # Casos de Teste
 ## Login
-
 * **Caminhos E Perfis**
   * *Caminho*
     - Login
   * *Perfil*
-    - Perfis: Rede, Regional, Instituição e Professor
+    - Rede, Regional, Instituição e Professor
 
 * **Varrer Tela de Login**
   * *Realizar varredura de todos os elementos que possuem interação na aplicação*
@@ -46,7 +45,7 @@
 
 
 
-* **Painel**
+## Painel
   * *Caminho: Login/Login*
     1. Varrer Tela de Login
 
