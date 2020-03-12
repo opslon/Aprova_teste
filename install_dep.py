@@ -24,7 +24,7 @@ print ("Diretorio './Instaladores' criado!")
 def bar_custom(current, total, width=80):
     print("Downloading: %d%% [%d / %d] bytes" % (current / total * 100, current, total))
 wget.download('https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-win64.zip', bar=bar_custom)
-os.chdir("..");
+os.chdir("..")
 #os.mkdir("./gecko") <- Diretório já é criado na descompressão abaixo
 # Descomprime o driver na pasta /gecko
 zip = ZipFile('./Instaladores/geckodriver-v0.26.0-win64.zip')
