@@ -19,11 +19,17 @@ Dependências para rodar os scripts Python e suas biliotecas
 
 ## Instalação
 
-Um passo a passo para a instalação das dependências.
+### Instalação Automatica de Dependências
+
+Para instalar as dependências, após instalar o Python rode num terminal o comando.
+```
+python install_dep.py
+```
+Feito isso você está pronto para rodar os scrips de teste automatizado, e pode ignorar os passos abaixo.
 
 ### Instale as seguintes bibliotecas python:
 
-- O arquivo instalar_dependencias.bat possui os comandos necessários para executar a instalação das bibliotecas abaixo.
+- Abaixo seguem as bibliotecas Python necessárias pra rodar os scripts de teste.
 
  * **requests2** - Requests is the only Non-GMO HTTP library for Python, safe for human consumption;
  * **pandas** - A great Python Data Analysis Library;
@@ -31,11 +37,11 @@ Um passo a passo para a instalação das dependências.
  * **beautfulsoup4** - Library for pulling data out of HTML and XML files;
  * **selenium** - An API to write functional/acceptance tests using Selenium WebDriver.
 
-Com o CMD rode o seguinte comando caso queira instalar um pacote isolado:
+Com o CMD rode o seguinte comando caso precise instalar um pacote isolado:
 ```
 pip install -r "nome_biblioteca_sem_aspas"
 ```
-
+## Links para download das dependências
 ### Geckodriver 
 
 [Você pode encontrar o arquivo do driver no seguinte link.](https://github.com/mozilla/geckodriver/releases)
