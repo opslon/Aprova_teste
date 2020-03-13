@@ -8,3 +8,6 @@ gecko/
 Instaladores/
 # Ignore driver
 geckodriver.exe
+# Ignore arquivos OLD
+OLD_instalar_dependencias.bat
+OLD_plug_and_play.ps1
