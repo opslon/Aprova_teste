@@ -27,7 +27,7 @@ python install_dep.py
 ```
 Feito isso você está pronto para rodar os scrips de teste automatizado, e pode ignorar os passos abaixo.
 
-### Instale as seguintes bibliotecas python:
+### Instalação Manual de Dependências:
 
 - Abaixo seguem as bibliotecas Python necessárias pra rodar os scripts de teste.
 
