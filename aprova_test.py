@@ -15,7 +15,7 @@ url = "https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net/app/login"
 
 option = Options()
 option.headless = True
-driver = webdriver.Firefox(executable_path=r'./gecko/geckodriver')
+driver = webdriver.Firefox(executable_path=r'.\gecko\geckodriver.exe')
 
 driver.get(url)
 
