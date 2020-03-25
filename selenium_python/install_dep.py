@@ -10,6 +10,8 @@ os.system('pip3 install lxml')
 os.system('pip3 install beautifulsoup4')
 os.system('pip3 install selenium')
 os.system('pip3 install robotframework')
+os.sistem('pip install --upgrade robotframework-selenium2library')
+
 #os.system('pip install zipfile') <- Modulo nao existe zip. Vem do modulo "import os"
 import wget # Biblioteca para download de arquivos
 

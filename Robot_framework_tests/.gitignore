@@ -1,0 +1,21 @@
+geckodriver.log
+ranking.json
+
+# ignore directory .vscode/ and venv/
+.vscode/
+venv/
+gecko/
+Instaladores/
+# Ignore driver
+geckodriver.exe
+chromedriver.exe
+# Ignore arquivos OLD
+OLD_instalar_dependencias.bat
+OLD_plug_and_play.ps1
+# Ignore log
+*.log
+log.*
+# Extra Ignore
+output.xml
+report.html
+*.exe
