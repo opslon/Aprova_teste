@@ -19,3 +19,5 @@ log.*
 output.xml
 report.html
 *.exe
+# Ignore print log
+*.png
