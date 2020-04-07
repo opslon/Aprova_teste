@@ -19,8 +19,10 @@ Coletar mensagem de erro "${mensagem_erro}"
     Set Selenium Implicit Wait  30
     #Alert Should Be Present     Text='Usuário ou senha não coincidem com um usuário válido ou sua conta foi bloqueada!'   action=ACCEPT
     #Element Text Should Be      tag:simple-snack-bar   outerHTML=${mensagem_erro}
+    Sleep    4
     Element Text Should Be      ${ALLERT_ELEMNT}   ${mensagem_erro}
-    handle allert               accept
+    #handle allert               accept
+    Handle Alert    accept
     #Click Element               class:mat-button
 
 Clicar ok mensagem de erro
