@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   Teste 1
+Documentation   Testes dos casos de Painel principal Aprova
 Library                   SeleniumLibrary
 Resource                  keywrds.robot
 

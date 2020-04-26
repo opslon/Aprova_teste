@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   Teste 1
+Documentation   Testes dos casos de Login Aprova
 Library                   SeleniumLibrary
 #Library                   AngularJSLibrary
 #Library                   ngWebDriver

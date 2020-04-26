@@ -4,7 +4,8 @@ Resource                  elements.robot
 
 *** Keywords ***
 Acessar
-    Open Browser        https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net    firefox
+    Open Browser        https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net    chrome
+    Maximize Browser Window
     Set Selenium Implicit Wait  30
     Click Link  /app
 
@@ -41,6 +42,7 @@ Selecionar Projeto 2020-Aprova_Demonstracao
     Set Selenium Implicit Wait      30
     Click Element                   ${MAT_BUTTN_4}
     Click Element                   ${ACCEPT_PRJCT}
+
 Selecionar Projeto Professor 2020-Aprova_Demonstracao
     Set Selenium Implicit Wait      30
     Click Element                   ${MAT_BUTTN_3}
@@ -64,3 +66,51 @@ Acessar Cadernos
     Click Element                   ${MENU_CADERNO}
     Wait Until Element Is Visible   ${FILTER_CLEAR}
     Location Should Contain         ${MENU_CADERNO_LINK}
+
+Acessar Simulados
+    Set Selenium Implicit Wait      30
+    Click Element                   ${MENU_SIMULADOS}
+    Wait Until Element Is Visible   ${FILTER_CLEAR}
+    Location Should Contain         ${MENU_SIMULADOS_LINK}
+
+Acessar Lancamento Respostas
+    Sleep                           5
+    Go To                           https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net/app/simulados/lancamento/173;instituicao=2915;ano=12;materia=1
+    #Reload Page
+
+Lancar resposta
+    Set Selenium Implicit Wait      30
+    Wait Until Element Is Visible   ${NOME_ALUNO}       timeout=10
+    Click Element                   ${NOME_ALUNO}
+    Set Selenium Implicit Wait      30
+    Click Element                   ${QST_1_A}
+
+Filtro Simulados
+    Set Selenium Implicit Wait      30
+    # Press Keys                      xpath=//*[.='xyz']          17  #CTRL
+    # Press Keys                      xpath=//*[.='xyz']          45  #tecla menos
+    # Press Keys                      xpath=//*[.='xyz']          45  #tecla menos
+    Execute javascript  document.body.style.zoom="50%";
+    Wait Until Element Is Visible   ${FILTER_CLEAR}
+    Wait Until Element Is Visible   ${SIMULADO_CARD1}       timeout=10
+    Click Element                   ${SEGMENTO_FILTRO_FUND1}
+    Wait Until Element Is Visible   ${SIMULADO_CARD1}       timeout=10
+    Click Element                   ${FILTER_CLEAR}
+    Click Element                   ${SEGMENTO_FILTRO_FUND2}
+    Wait Until Element Is Visible   ${SIMULADO_CARD1}       timeout=10
+    Click Element                   ${FILTER_CLEAR}
+
+    Click Element                   ${SEGMENTO_FILTRO_FUND1}
+    Wait Until Element Is Visible   ${SIMULADO_CARD1}       timeout=10
+    Click Element                   ${ANO_FILTRO}
+    #Set Window Position             208     604
+    #Execute javascript    document.getElementById('toolbar').style.top = Math.max(100, window.scrollY) + 'px'
+    Get Vertical Position           ${SIMULADO_FILTRO}
+    Wait Until Element Is Visible   ${SIMULADO_CARD1}       timeout=10
+    Scroll Element Into View        ${SIMULADO_FILTRO}
+    Click Element                   ${SIMULADO_FILTRO}
+    Wait Until Element Is Visible   ${SIMULADO_CARD1}       timeout=10
+    Scroll Element Into View        ${DISCIPLINA_FILTRO}
+    #Press Key                       xpath=//body    \ue00f
+    Click Element                   ${DISCIPLINA_FILTRO}
+    Wait Until Element Is Visible   ${SIMULADO_CARD1}       timeout=10

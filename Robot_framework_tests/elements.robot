@@ -17,15 +17,40 @@ ${MENU_CALENDAR}            id:menu-calendario
 ${MENU_RESULTADOS}          id:menu-resultados
 ${MENU_CONTEUDOS}           id:menu-conteudos
 ${MENU_CADERNO}             id:menu-livro-digital
+${MENU_SIMULADOS}           id:menu-simulados
 ${MENU_CALENDAR_LINK}       https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net/app/calendario
 ${MENU_RESULTADOS_LINK}     https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net/app/resultados
 ${MENU_CADERNO_LINK}        https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net/app/livro-digital
+${MENU_SIMULADOS_LINK}      https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net/app/simulados/listar
 
-# caso acessar com o ID falhe use "Click Link ${CALENDAR_LINK}"
+# caso acessar com o ID falhe use "Click Link ${CALENDAR_LINK}" 
+# Links abaixo registrados como href="/app.."
 ${CALENDAR_LINK}            /app/calendario
 ${RESULKTADOS_LINK}         /app/resultados
 ${CADERNO_LINK}             /app/livro-digital
+${SIMULADOS_LINK}           /app/simulados/listar
 
+# SIMULADOS PAGE
+${SEGMENTO_FILTRO_FUND1}    xpath=//span[contains(.,'Ensino Fundamental I')]
+# ${simulados.ensino_fundamental_i}              css=#sidenav-filtros aaf-panel.aaf-panel.ng-tns-c26-8.aaf-expanded div.aaf-panel-content div.aaf-panel-body div:nth-of-type(1) div.content.h-100-p.ng-tns-c22-6.ng-trigger.ng-trigger-animate.ng-star-inserted div.nav.h-100-p div:nth-of-type(2) a.nav-link
+${SEGMENTO_FILTRO_FUND2}    xpath=//span[contains(.,'Ensino Fundamental II')]
+${ANO_FILTRO}               xpath=//span[contains(.,'1° ANO ')]
+${SIMULADO_FILTRO}          xpath=//span[contains(.,'Simulado 1')]
+${DISCIPLINA_FILTRO}        xpath=//span[contains(.,'Língua Portuguesa')]
 
-#else
+# LANCAMENTO DE RESPOSTAS PAGE
+${NOME_ALUNO}               xpath=//p[text()='Ana Lara Suttani De Morais Clemente']
+${QST_1_A}                  xpath=(//span[text()=' B '])[1]
+
+# Usado como contorno
+
 ${FILTER_CLEAR}             class:clean
+${SIMULADO_CARD1}           css:div.simulado-content.LP div:nth-of-type(3) button:nth-of-type(1)
+#${SIMULADO_CARD1}           css:simulado:nth-child(1).nome
+#${SIMULADO_CARD1}           css:simulado:nth-child(1).nome[innerHTML='AI-LP-SIMULADO 1']
+#css=.simulado:nth-child(1) .nome
+#${SIMULADO_CARD1}           xpath=//div[. = 'AI-LP-SIMULADO 1']
+#${SIMULADO_CARD1}           xpath:innerHTML
+
+#${simulados.inserir_respostas_1}               css=#tela-simulados div.ng-star-inserted app-simulado-list.ng-tns-c24-10 div.simulado-list.ng-tns-c24-10.ng-trigger.ng-trigger-animateStagger.ng-star-inserted app-simulado-list-item:nth-of-type(1) div.simulado-content.LP div:nth-of-type(3) button:nth-of-type(1)
+
