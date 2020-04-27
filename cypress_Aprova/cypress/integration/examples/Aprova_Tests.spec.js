@@ -2,7 +2,7 @@ describe('Meu primeiro Teste do Aprova no cypress', () =>{
 
     it('Acessar o Aprova e Logar', () =>{
         cy.visit('https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net')
-        cy.viewport(1366, 768)
+        //cy.viewport(1366, 768)
         cy.get('.btn').click()
         cy.get('#mat-input-0').type('demo1')
         cy.get('#mat-input-1').type('deo1')
@@ -13,7 +13,7 @@ describe('Meu primeiro Teste do Aprova no cypress', () =>{
 
     })
     it('Acessar Menu Status das Aplicacoes', () =>{
-        cy.viewport(1366, 768)
+        //cy.viewport(1366, 768)
         // SELECIONA MENU => STATUS DAS APLICAÇÕES
         cy.get('#menu-acompanhamento').click()
         cy.wait(10000)
