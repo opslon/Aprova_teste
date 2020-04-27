@@ -52,7 +52,9 @@ ${NOME_ALUNO}               xpath=//p[text()='Ana Lara Suttani De Morais Clement
 ${QST_1_A}                  xpath=(//span[text()=' B '])[1]
 
 # STATUS DAS APLICACOES PAGE
-${FILTRO_SEG}               xpath=//span[contains(.,'Segmento')]
+#${FILTRO_SEG}               xpath=//span[text()='Segmento']
+${FILTRO_SEG}               css:body.primary-800-bg.ng-tns-0-0:nth-child(2) mat-sidenav-container.mat-drawer-container.mat-sidenav-container mat-sidenav-content.mat-drawer-content.mat-sidenav-content.ng-star-inserted div.content-wrapper fuse-content.ng-tns-c9-1.ng-trigger.ng-trigger-routerTransitionUp app-acompanhamento.ng-tns-c19-6.ng-star-inserted div.page-layout.simple.fullwidth.ps.ps--active-y div.container div.widget-group div.ng-tns-c19-6:nth-child(1) div.filtros div.px-16:nth-child(2) mat-form-field.w-100-p.mat-form-field.ng-tns-c22-7.mat-primary.mat-form-field-type-mat-select.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-hide-placeholder div.mat-form-field-wrapper div.mat-form-field-flex div.mat-form-field-infix mat-select.mat-select.ng-tns-c23-8.ng-tns-c19-6.ng-star-inserted div.mat-select-trigger > div.mat-select-value
+#${FILTRO_SEG}               css:mat-select-value > ng-tns-c23-8
 ${FILTRO_DISC}              xpath=//span[contains(.,'Disciplina')]
 ${FILTRO_SEG_SELECT}        xpath=//span[contains(.,' Ensino Fundamental I ')]
 ${FILTRO_DISC_SELECT}       xpath=//span[contains(.,' Língua Portuguesa ')]

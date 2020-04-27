@@ -83,6 +83,7 @@ Acessar Status Das Aplicacoes
     Click Element                   ${MENU_STATUS_AP}
 
 Filtrar Status Das Aplicacoes
+    Set Selenium Implicit Wait      30
     Click Element                   ${FILTRO_SEG}
     Click Element                   ${FILTRO_SEG_SELECT}
     Click Element                   ${FILTRO_DISC}
