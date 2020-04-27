@@ -4,7 +4,7 @@ Resource                  elements.robot
 
 *** Keywords ***
 Acessar
-    Open Browser        https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net    chrome
+    Open Browser        https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net    firefox
     Maximize Browser Window
     Set Selenium Implicit Wait  30
     Click Link  /app
@@ -77,6 +77,16 @@ Acessar Lancamento Respostas
     Sleep                           5
     Go To                           https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net/app/simulados/lancamento/173;instituicao=2915;ano=12;materia=1
     #Reload Page
+
+Acessar Status Das Aplicacoes
+    Set Selenium Implicit Wait      30
+    Click Element                   ${MENU_STATUS_AP}
+
+Filtrar Status Das Aplicacoes
+    Click Element                   ${FILTRO_SEG}
+    Click Element                   ${FILTRO_SEG_SELECT}
+    Click Element                   ${FILTRO_DISC}
+    Click Element                   ${FILTRO_DISC_SELECT}
 
 Lancar resposta
     Set Selenium Implicit Wait      30
