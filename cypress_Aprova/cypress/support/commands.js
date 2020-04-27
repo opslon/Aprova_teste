@@ -115,3 +115,17 @@ Cypress.Commands.add('acessa_menu_status_aplicacao', () =>{
 
 })
 
+Cypress.Commands.add('acessa_menu_simulados', ()=>{
+    cy.get('#menu-simulados').click()
+
+    if (cy.contains('Ensino Fundamental I').not('exist')){
+        cy.wait(3000)
+    }
+
+    cy.contains('Ensino Fundamental I').click()
+    cy.contains('3° ANO ').click()
+    cy.contains('Simulado 1').click()
+    cy.contains('Língua Portuguesa').click()
+    
+})
+
