@@ -5,13 +5,13 @@ describe('Teste do menu de simulados nos perfís', ()=>{
     })
 
     it('Acessar Simulados', ()=>{
-        cy.acessa_menu_simulados()
+        cy.ap_acessa_menu_simulados()
     })
     it('Limpar Filtro', ()=>{
         cy.get('.aaf-panel-header-titulo > .clean').click()
     })
     it('Acessar Simulados Novamente', ()=>{
-        cy.acessa_menu_simulados()
+        cy.ap_acessa_menu_simulados()
     })
     it('Acessar inserção de resultados', ()=>{
         // if(cy.get('.card-infos > .nome').contains('string', 'AI-LP-Simulado 1')){
@@ -31,17 +31,17 @@ describe('Teste do menu de simulados nos perfís', ()=>{
 
     it('Simulados com Professor', ()=> {
         cy.visit('https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net')
-        cy.logar_professor()
+        cy.ap_logar_professor()
     })
 
     it('Acessar Simulados', ()=>{
-        cy.acessa_menu_simulados()
+        cy.ap_acessa_menu_simulados()
     })
     it('Limpar Filtro', ()=>{
         cy.get('.aaf-panel-header-titulo > .clean').click()
     })
     it('Acessar Simulados Novamente', ()=>{
-        cy.acessa_menu_simulados()
+        cy.ap_acessa_menu_simulados()
     })
     it('Acessar inserção de resultados', ()=>{
         // if(cy.get('.card-infos > .nome').contains('string', 'AI-LP-Simulado 1')){
@@ -53,8 +53,8 @@ describe('Teste do menu de simulados nos perfís', ()=>{
     })
     it('Selecionar Aluno', ()=>{
         cy.wait(3000)
-        //cy.contains('Brenda Caroline Rodrigues').click()
-        cy.get('mat-row.aluno:nth-child(4)').click()
+        cy.contains('Brenda Caroline Rodrigues').click()
+        //cy.get('mat-row.aluno:nth-child(4)').click()
         cy.get('#resposta_0 > :nth-child(3)').click()
         
     })

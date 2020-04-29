@@ -23,61 +23,71 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
-
-Cypress.Commands.add('logar_rede', ()=>{
+Cypress.Commands.add('acessa_aprova', () => {
+    cy.visit('https://web-avaliadigital-aprovabrasil-prd.azurewebsites.net')
     cy.get('.btn').click()
+})
+
+Cypress.Commands.add('ap_logar_rede', ()=>{
+    //cy.get('.btn').click()
     cy.get('#mat-input-0').type('Rede')
     cy.get('#mat-input-1').type('at04')
+    if (cy.get('.submit-button').not('exist')) {
+        cy.wait(1000)
+    }
     cy.get('.submit-button').click()
     // VERIFICA SE PROJETO CARREGOU
-    if (cy.get('.lista-projetos-dialog > :nth-child(4)')) {
-        
-    } else (cy.wait(3000))
-    
+    if (cy.get('.lista-projetos-dialog > :nth-child(4)').not('exist')) {
+        cy.wait(4000)
+    }
     // SELECIONA PROJETO
     cy.get('.lista-projetos-dialog > :nth-child(4)').click()
     cy.get('.btn-projeto-dialog > .btn').click()
 })
 
-Cypress.Commands.add('logar_escola', ()=>{
-    cy.get('.btn').click()
+Cypress.Commands.add('ap_logar_escola', ()=>{
+    //cy.get('.btn').click()
     cy.get('#mat-input-0').type('demo1')
     cy.get('#mat-input-1').type('deo1')
+    if (cy.get('.submit-button').not('exist')) {
+        cy.wait(1000)
+    }
     cy.get('.submit-button').click()
     // VERIFICA SE PROJETO CARREGOU
-    if (cy.get('.lista-projetos-dialog > :nth-child(4)')) {
-        
-    } else (cy.wait(3000))
-    
+    if (cy.get('.lista-projetos-dialog > :nth-child(4)').not('exist')) {
+        cy.wait(4000)
+    }
     // SELECIONA PROJETO
     cy.get('.lista-projetos-dialog > :nth-child(4)').click()
     cy.get('.btn-projeto-dialog > .btn').click()
 })
 
-Cypress.Commands.add('logar_professor', ()=>{
-    cy.get('.btn').click()
+Cypress.Commands.add('ap_logar_professor', ()=>{
+    //cy.get('.btn').click()
     cy.get('#mat-input-0').type('293124@avalia.com')
     cy.get('#mat-input-1').type('ZTVEHB')
+    if (cy.get('.submit-button').not('exist')) {
+        cy.wait(1000)
+    }
     cy.get('.submit-button').click()
     // VERIFICA SE PROJETO CARREGOU
-    if (cy.get('.lista-projetos-dialog > :nth-child(3)')) {
-        
-    } else (cy.wait(3000))
-    
+    if (cy.get('.lista-projetos-dialog > :nth-child(3)').not('exist')) {
+        cy.wait(4000)
+    }
     // SELECIONA PROJETO
     cy.get('.lista-projetos-dialog > :nth-child(3)').click()
     cy.get('.btn-projeto-dialog > .btn').click()
 })
 
-Cypress.Commands.add('acessa_menu_calendario', ()=>{
+Cypress.Commands.add('ap_acessa_menu_calendario', ()=>{
     cy.get('#menu-calendario').click()
-    if (cy.contains('Simulados').should('not.be.visible')) {
+    if (cy.contains('Simulados').not('exists')) {
         cy.wait(4000)
     }
     cy.contains('Simulados').click()
 })
 
-Cypress.Commands.add('acessa_menu_resultados', ()=>{
+Cypress.Commands.add('ap_acessa_menu_resultados', ()=>{
     cy.get('#menu-resultados').click()
 
     // VERIFICA EXISTENCIA DO FILTRO E REALIZA FILTRO
@@ -86,7 +96,7 @@ Cypress.Commands.add('acessa_menu_resultados', ()=>{
             cy.wait(3000)
         }
         cy.contains('Ensino Fundamental I').click()
-        cy.contains('1° ANO ').click()
+        cy.contains('3° ANO ').click()
         cy.contains('Simulado 1').click()
         cy.contains('Língua Portuguesa').click()
     } else (cy.wait(3000))
@@ -95,7 +105,7 @@ Cypress.Commands.add('acessa_menu_resultados', ()=>{
     cy.get('.aaf-panel-header-titulo > .clean').click()
 })
 
-Cypress.Commands.add('acessa_menu_status_aplicacao', () =>{
+Cypress.Commands.add('ap_acessa_menu_status_aplicacao', () =>{
     cy.get('#menu-acompanhamento').click()
     
     if (cy.get('#mat-select-1 > .mat-select-trigger > .mat-select-value').not('exist')) {
@@ -115,7 +125,7 @@ Cypress.Commands.add('acessa_menu_status_aplicacao', () =>{
 
 })
 
-Cypress.Commands.add('acessa_menu_simulados', ()=>{
+Cypress.Commands.add('ap_acessa_menu_simulados', ()=>{
     cy.get('#menu-simulados').click()
 
     if (cy.contains('Ensino Fundamental I').not('exist')){
@@ -128,4 +138,3 @@ Cypress.Commands.add('acessa_menu_simulados', ()=>{
     cy.contains('Língua Portuguesa').click()
     
 })
-
