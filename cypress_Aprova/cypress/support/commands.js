@@ -66,14 +66,18 @@ Cypress.Commands.add('ap_logar_professor', ()=>{
     //cy.get('.btn').click()
     cy.get('#mat-input-0').type('293124@avalia.com')
     cy.get('#mat-input-1').type('ZTVEHB')
-    if (cy.get('.submit-button').not('exist')) {
-        cy.wait(1000)
-    }
+    // VERIFICA SE O SUBMIT FOI CRIADO
+    expect('.submit-button').to.exist
+    // if (cy.get('.submit-button').not('exist')) {
+    //     cy.wait(1000)
+    // }
     cy.get('.submit-button').click()
+
     // VERIFICA SE PROJETO CARREGOU
-    if (cy.get('.lista-projetos-dialog > :nth-child(3)').not('exist')) {
-        cy.wait(4000)
-    }
+    expect('.lista-projetos-dialog > :nth-child(3)').to.exist
+    // if (cy.get('.lista-projetos-dialog > :nth-child(3)').not('exist')) {
+    //     cy.wait(4000)
+    // }
     // SELECIONA PROJETO
     cy.get('.lista-projetos-dialog > :nth-child(3)').click()
     cy.get('.btn-projeto-dialog > .btn').click()
@@ -81,9 +85,13 @@ Cypress.Commands.add('ap_logar_professor', ()=>{
 
 Cypress.Commands.add('ap_acessa_menu_calendario', ()=>{
     cy.get('#menu-calendario').click()
-    if (cy.contains('Simulados').not('exists')) {
-        cy.wait(4000)
-    }
+
+    expect(cy.contains('Simulados')).to.exist
+
+    // if (cy.contains('Simulados').not('exist')) {
+    //     cy.wait(4000)
+    // }
+
     cy.contains('Simulados').click()
 })
 
@@ -92,9 +100,11 @@ Cypress.Commands.add('ap_acessa_menu_resultados', ()=>{
 
     // VERIFICA EXISTENCIA DO FILTRO E REALIZA FILTRO
     if (cy.get('.aaf-panel-header-titulo > .clean')) {
-        if (cy.contains('Ensino Fundamental I').should("not.be.visible")) {
-            cy.wait(3000)
-        }
+        expect(cy.contains('Ensino Fundamental I').to.exist)
+        // if (cy.contains('Ensino Fundamental I').should("not.be.visible")) {
+        //     cy.wait(3000)
+        // }
+
         cy.contains('Ensino Fundamental I').click()
         cy.contains('3° ANO ').click()
         cy.contains('Simulado 1').click()
