@@ -32,14 +32,16 @@ Cypress.Commands.add('ap_logar_rede', ()=>{
     //cy.get('.btn').click()
     cy.get('#mat-input-0').type('Rede')
     cy.get('#mat-input-1').type('at04')
-    if (cy.get('.submit-button').not('exist')) {
-        cy.wait(1000)
-    }
+    expect(cy.get('.submit-button')).to.exist
+    // if (cy.get('.submit-button').not('exist')) {
+    //     cy.wait(1000)
+    // }
     cy.get('.submit-button').click()
     // VERIFICA SE PROJETO CARREGOU
-    if (cy.get('.lista-projetos-dialog > :nth-child(4)').not('exist')) {
-        cy.wait(4000)
-    }
+    expect(cy.get('.lista-projetos-dialog > :nth-child(4)')).to.exist
+    // if (cy.get('.lista-projetos-dialog > :nth-child(4)').not('exist')) {
+    //     cy.wait(4000)
+    // }
     // SELECIONA PROJETO
     cy.get('.lista-projetos-dialog > :nth-child(4)').click()
     cy.get('.btn-projeto-dialog > .btn').click()
@@ -49,14 +51,16 @@ Cypress.Commands.add('ap_logar_escola', ()=>{
     //cy.get('.btn').click()
     cy.get('#mat-input-0').type('demo1')
     cy.get('#mat-input-1').type('deo1')
-    if (cy.get('.submit-button').not('exist')) {
-        cy.wait(1000)
-    }
+    expect(cy.get('.submit-button')).to.exist
+    // if (cy.get('.submit-button').not('exist')) {
+    //     cy.wait(1000)
+    // }
     cy.get('.submit-button').click()
     // VERIFICA SE PROJETO CARREGOU
-    if (cy.get('.lista-projetos-dialog > :nth-child(4)').not('exist')) {
-        cy.wait(4000)
-    }
+    expect(cy.get('.lista-projetos-dialog > :nth-child(4)')).to.exist
+    // if (cy.get('.lista-projetos-dialog > :nth-child(4)').not('exist')) {
+    //     cy.wait(4000)
+    // }
     // SELECIONA PROJETO
     cy.get('.lista-projetos-dialog > :nth-child(4)').click()
     cy.get('.btn-projeto-dialog > .btn').click()
@@ -99,17 +103,18 @@ Cypress.Commands.add('ap_acessa_menu_resultados', ()=>{
     cy.get('#menu-resultados').click()
 
     // VERIFICA EXISTENCIA DO FILTRO E REALIZA FILTRO
-    if (cy.get('.aaf-panel-header-titulo > .clean')) {
-        expect(cy.contains('Ensino Fundamental I').to.exist)
-        // if (cy.contains('Ensino Fundamental I').should("not.be.visible")) {
-        //     cy.wait(3000)
-        // }
+    expect(cy.get('.aaf-panel-header-titulo > .clean')).to.exist 
+        
+    expect(cy.contains('Ensino Fundamental I')).to.exist
+    // if (cy.contains('Ensino Fundamental I').should("not.be.visible")) {
+    //     cy.wait(3000)
+    // }
 
-        cy.contains('Ensino Fundamental I').click()
-        cy.contains('3° ANO ').click()
-        cy.contains('Simulado 1').click()
-        cy.contains('Língua Portuguesa').click()
-    } else (cy.wait(3000))
+    cy.contains('Ensino Fundamental I').click()
+    cy.contains('3° ANO ').click()
+    cy.contains('Simulado 1').click()
+    cy.contains('Língua Portuguesa').click()
+
     //cy.scrollTo("top")
     // LIMPA FILTRO
     cy.get('.aaf-panel-header-titulo > .clean').click()
@@ -118,9 +123,7 @@ Cypress.Commands.add('ap_acessa_menu_resultados', ()=>{
 Cypress.Commands.add('ap_acessa_menu_status_aplicacao', () =>{
     cy.get('#menu-acompanhamento').click()
     
-    if (cy.get('#mat-select-1 > .mat-select-trigger > .mat-select-value').not('exist')) {
-        cy.wait(3000)
-    }
+    expect(cy.get('#mat-select-1 > .mat-select-trigger > .mat-select-value')).to.exist
 
     //FILTRA SEGMENTO
     cy.get('#mat-select-1 > .mat-select-trigger > .mat-select-value').click()
@@ -138,9 +141,11 @@ Cypress.Commands.add('ap_acessa_menu_status_aplicacao', () =>{
 Cypress.Commands.add('ap_acessa_menu_simulados', ()=>{
     cy.get('#menu-simulados').click()
 
-    if (cy.contains('Ensino Fundamental I').not('exist')){
-        cy.wait(3000)
-    }
+    expect(cy.contains('Ensino Fundamental I')).to.exist
+
+    // if (cy.contains('Ensino Fundamental I').not('exist')){
+    //     cy.wait(3000)
+    // }
 
     cy.contains('Ensino Fundamental I').click()
     cy.contains('3° ANO ').click()
